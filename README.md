@@ -2,21 +2,30 @@
 
 A one-page personal profile inspired by the FaithTech design system.
 
+## Layout
+
+| Path | Purpose |
+| --- | --- |
+| `site/` | The production site. Everything here is published as-is. |
+| `site/index.html` | The entire page — markup and styles in one self-contained file. |
+| `site/CNAME` | Asserts the `quinntynebrown.com` custom domain on every deployment. |
+| `.github/workflows/deploy-pages.yml` | Builds and deploys `site/` to GitHub Pages. |
+
 ## Local preview
 
 From the repository root:
 
 ```powershell
-python -m http.server 8000 --directory docs
+python -m http.server 8000 --directory site
 ```
 
-Then open <http://127.0.0.1:8000/mocks/>.
+Then open <http://127.0.0.1:8000/>.
 
 ## Deployment
 
-The [GitHub Pages workflow](.github/workflows/deploy-pages.yml) publishes the contents of `docs/mocks` whenever `main` changes. The deployed artifact treats that folder as the site root, so `docs/mocks/index.html` is served at `/`.
+The [GitHub Pages workflow](.github/workflows/deploy-pages.yml) publishes the contents of `site` whenever `main` changes. The deployed artifact treats that folder as the site root, so `site/index.html` is served at `/`.
 
-`docs/mocks/CNAME` must stay in place and contain `quinntynebrown.com`. Because the workflow publishes `docs/mocks` as the site root, that file is what asserts the custom domain on every deployment. Without it GitHub serves the default `*.github.io` certificate for `quinntynebrown.com` and HTTPS fails with `ERR_CERT_COMMON_NAME_INVALID`.
+`site/CNAME` must stay in place and contain `quinntynebrown.com`. Because the workflow publishes `site` as the site root, that file is what asserts the custom domain on every deployment. Without it GitHub serves the default `*.github.io` certificate for `quinntynebrown.com` and HTTPS fails with `ERR_CERT_COMMON_NAME_INVALID`.
 
 The Pages custom domain is `quinntynebrown.com`. Namecheap DNS must contain the following non-conflicting records:
 
