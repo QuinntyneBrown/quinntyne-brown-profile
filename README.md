@@ -9,6 +9,7 @@ A one-page personal profile inspired by the FaithTech design system.
 | `site/` | The production site. Everything here is published as-is. |
 | `site/index.html` | The entire page — markup and styles in one self-contained file. |
 | `site/CNAME` | Asserts the `quinntynebrown.com` custom domain on every deployment. |
+| `docs/` | Documentation about the repository. Not published. |
 | `.github/workflows/deploy-pages.yml` | Builds and deploys `site/` to GitHub Pages. |
 
 ## Local preview
@@ -23,32 +24,6 @@ Then open <http://127.0.0.1:8000/>.
 
 ## Deployment
 
-The [GitHub Pages workflow](.github/workflows/deploy-pages.yml) publishes the contents of `site` whenever `main` changes. The deployed artifact treats that folder as the site root, so `site/index.html` is served at `/`.
+Pushing to `main` publishes `site/` to GitHub Pages at <https://quinntynebrown.com/>.
 
-`site/CNAME` must stay in place and contain `quinntynebrown.com`. Because the workflow publishes `site` as the site root, that file is what asserts the custom domain on every deployment. Without it GitHub serves the default `*.github.io` certificate for `quinntynebrown.com` and HTTPS fails with `ERR_CERT_COMMON_NAME_INVALID`.
-
-The Pages custom domain is `quinntynebrown.com`. Namecheap DNS must contain the following non-conflicting records:
-
-| Type | Host | Value |
-| --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `quinntynebrown.github.io` |
-
-Keep unrelated email records in place. DNS propagation and GitHub's HTTPS certificate issuance can take time after the records change.
-
-If HTTPS ever breaks again, check the certificate state first:
-
-```powershell
-gh api repos/QuinntyneBrown/quinntyne-brown-profile/pages
-```
-
-A missing `https_certificate` field means GitHub never requested a certificate. Removing and re-adding the custom domain restarts issuance, after which `https_enforced` can be turned back on:
-
-```powershell
-'{"cname":null}' | gh api -X PUT repos/QuinntyneBrown/quinntyne-brown-profile/pages --input -
-'{"cname":"quinntynebrown.com"}' | gh api -X PUT repos/QuinntyneBrown/quinntyne-brown-profile/pages --input -
-'{"https_enforced":true}' | gh api -X PUT repos/QuinntyneBrown/quinntyne-brown-profile/pages --input -
-```
+See [docs/deployment.md](docs/deployment.md) for the custom domain, DNS records, and HTTPS recovery steps.
