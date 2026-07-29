@@ -16,6 +16,8 @@ Then open <http://127.0.0.1:8000/mocks/>.
 
 The [GitHub Pages workflow](.github/workflows/deploy-pages.yml) publishes the contents of `docs/mocks` whenever `main` changes. The deployed artifact treats that folder as the site root, so `docs/mocks/index.html` is served at `/`.
 
+`docs/mocks/CNAME` must stay in place and contain `quinntynebrown.com`. Because the workflow publishes `docs/mocks` as the site root, that file is what asserts the custom domain on every deployment. Without it GitHub serves the default `*.github.io` certificate for `quinntynebrown.com` and HTTPS fails with `ERR_CERT_COMMON_NAME_INVALID`.
+
 The Pages custom domain is `quinntynebrown.com`. Namecheap DNS must contain the following non-conflicting records:
 
 | Type | Host | Value |
@@ -27,3 +29,17 @@ The Pages custom domain is `quinntynebrown.com`. Namecheap DNS must contain the 
 | CNAME | `www` | `quinntynebrown.github.io` |
 
 Keep unrelated email records in place. DNS propagation and GitHub's HTTPS certificate issuance can take time after the records change.
+
+If HTTPS ever breaks again, check the certificate state first:
+
+```powershell
+gh api repos/QuinntyneBrown/quinntyne-brown-profile/pages
+```
+
+A missing `https_certificate` field means GitHub never requested a certificate. Removing and re-adding the custom domain restarts issuance, after which `https_enforced` can be turned back on:
+
+```powershell
+'{"cname":null}' | gh api -X PUT repos/QuinntyneBrown/quinntyne-brown-profile/pages --input -
+'{"cname":"quinntynebrown.com"}' | gh api -X PUT repos/QuinntyneBrown/quinntyne-brown-profile/pages --input -
+'{"https_enforced":true}' | gh api -X PUT repos/QuinntyneBrown/quinntyne-brown-profile/pages --input -
+```
