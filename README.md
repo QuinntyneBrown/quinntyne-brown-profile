@@ -10,6 +10,7 @@ A one-page personal profile inspired by the FaithTech design system.
 | `site/index.html` | The entire page — markup and styles in one self-contained file. |
 | `site/CNAME` | Asserts the `quinntynebrown.com` custom domain on every deployment. |
 | `docs/` | Documentation about the repository. Not published. |
+| `docs/improvements.html` | Visual review: how the site could be improved, benchmarked against [mitchell-newell.com](https://mitchell-newell.com/). |
 | `.github/workflows/deploy-pages.yml` | Builds and deploys `site/` to GitHub Pages. |
 
 ## Local preview
