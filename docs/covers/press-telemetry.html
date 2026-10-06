@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .dash{position:absolute;left:112px;top:68px;width:560px;height:400px;background:#131416;border:1px solid hsl(220 8% 20%);border-radius:2px;color:#DDDFE4;overflow:hidden;font-family:system-ui,sans-serif}
+  .mono{font-family:"DejaVu Sans Mono",monospace;font-variant-numeric:tabular-nums}
+  .hdr{height:34px;display:flex;align-items:center;gap:12px;padding:0 16px;background:#1C1E21;border-bottom:1px solid hsl(220 8% 20%)}
+  .brand{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .pill{margin-left:6px;display:flex;align-items:center;gap:6px;font-size:8.5px;letter-spacing:.06em;color:#A7ABB4}
+  .pill i{width:8px;height:8px;border-radius:50%;background:#53C683}
+  .chips{display:flex;gap:4px}
+  .chip{font-size:8.5px;padding:3px 7px;border:1px solid hsl(220 8% 30%);border-radius:2px;color:#A7ABB4}
+  .chip.on{border-color:#57C5DB;color:#57C5DB}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 100px 0 16px}
+  .tile{background:#1C1E21;border:1px solid hsl(220 8% 20%);border-radius:2px;padding:9px 11px 8px}
+  .lbl{font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#8D929A;display:flex;align-items:center;gap:6px}
+  .lbl i{width:6px;height:6px;border-radius:50%;background:#57C5DB;box-shadow:0 0 0 3px rgba(87,197,219,.25)}
+  .dev{font-size:8px;color:#8D929A;margin-top:2px}
+  .val{font-size:22px;line-height:1.1;margin-top:6px;letter-spacing:-.01em}
+  .val small{font-size:9px;color:#A7ABB4;margin-left:3px}
+  .ts{font-size:7.5px;color:#8D929A;margin-top:4px}
+  .chart{margin:12px 100px 0 16px;border:1px solid hsl(220 8% 20%);border-radius:2px;background:#1C1E21}
+  .chd{display:flex;align-items:center;gap:8px;padding:8px 11px;font-size:9px;border-bottom:1px solid hsl(220 8% 20%)}
+  .chd .m{color:#8D929A}
+  .live{margin-left:4px;border:1px solid #57C5DB;color:#57C5DB;font-size:8px;letter-spacing:.08em;padding:1px 5px;border-radius:2px}
+  .chart svg{display:block;width:100%;height:120px}
+  .mark{position:absolute;left:46px;top:124px;width:64px;height:64px;filter:drop-shadow(0 8px 16px rgba(15,43,91,.18))}
+  .topic{position:absolute;left:18px;top:292px;height:26px;padding:0 10px;display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--hair);border-radius:2px;font-size:9px;color:var(--ink);white-space:nowrap}
+  .topic b{font-weight:600;color:#8D929A;letter-spacing:.06em;font-size:7.5px}
+  .payload{position:absolute;left:34px;top:328px;height:26px;padding:0 10px;display:flex;align-items:center;background:#fff;border:1px solid var(--hair);border-radius:2px;font-size:9px;color:var(--ink);white-space:nowrap}
+  .payload .k{color:#8D929A}.payload .n{color:#1e4aa8}
+  .flow{position:absolute;inset:0;pointer-events:none}
+</style></head><body>
+<div class="dash">
+  <div class="hdr"><span class="brand">Press Telemetry</span><span class="chips"><span class="chip">1H</span><span class="chip on">6H</span><span class="chip">24H</span></span><span class="pill"><i></i>CONNECTED</span></div>
+  <div class="tiles">
+    <div class="tile"><div class="lbl"><i></i>Temperature</div><div class="dev mono">press-01</div><div class="val mono">87.4<small>degC</small></div><div class="ts mono">2026-10-06T14:02:11Z</div></div>
+    <div class="tile"><div class="lbl"><i></i>Pressure</div><div class="dev mono">press-01</div><div class="val mono">210.3<small>bar</small></div><div class="ts mono">2026-10-06T14:02:11Z</div></div>
+    <div class="tile"><div class="lbl"><i></i>Cycle count</div><div class="dev mono">press-01</div><div class="val mono">148392<small>cycles</small></div><div class="ts mono">2026-10-06T14:02:11Z</div></div>
+  </div>
+  <div class="chart">
+    <div class="chd"><span class="mono">press-01 · temperature</span><span class="m">last 5 min</span><span class="m mono">87.4 degC</span><span class="live">LIVE</span></div>
+    <svg viewBox="0 0 520 120" preserveAspectRatio="none">
+      <g stroke="hsl(220 8% 20%)" stroke-width="1"><line x1="0" y1="30" x2="520" y2="30"/><line x1="0" y1="60" x2="520" y2="60"/><line x1="0" y1="90" x2="520" y2="90"/></g>
+      <path d="M0 78 C 40 74, 60 82, 100 76 S 160 70, 200 74 S 260 80, 300 72 S 360 66, 400 70 S 470 78, 520 72" fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M0 50 C 25 20, 55 20, 80 50 S 135 80, 160 50 S 215 20, 240 50 S 295 80, 320 50 S 375 20, 400 50 S 455 80, 480 50 S 510 28, 520 32" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="515" cy="72" r="3.5" fill="#3987e5"/><circle cx="515" cy="31" r="3.5" fill="#d95926"/>
+    </svg>
+  </div>
+</div>
+<svg class="flow" viewBox="0 0 600 375"><path d="M78 188 C 78 244, 60 272, 70 292" fill="none" stroke="#0f2b5b" stroke-opacity=".35" stroke-width="1" stroke-dasharray="2 4"/></svg>
+<svg class="mark" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="hsl(222 18% 12%)"/><polyline points="5,20 11,20 14,10 18,24 21,16 27,16" fill="none" stroke="hsl(190 65% 60%)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="topic mono"><b>MQTT</b>telemetry/press-01/temperature</div>
+<div class="payload mono">{<span class="k">"value"</span>: <span class="n">87.4</span>, <span class="k">"metric"</span>: "temperature"}</div>
+</body></html>

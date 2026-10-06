@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .sky{position:absolute;left:96px;top:62px;width:560px;height:380px;border-radius:28px;color:#2B5876;overflow:hidden;
+    background:linear-gradient(180deg,#AFE3F4 0%,#B9DDF5 40%,#E2F0FA 68%,#F4DBE3 100%);border:1px solid rgba(43,88,118,.14)}
+  .cloud{position:absolute;background:#fff;border-radius:999px;opacity:.9}
+  .cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+  .c1{left:300px;top:18px;width:70px;height:20px}.c1::before{left:12px;top:-12px;width:26px;height:26px}.c1::after{left:34px;top:-8px;width:20px;height:20px}
+  .c2{left:440px;top:46px;width:50px;height:14px;opacity:.8}.c2::before{left:10px;top:-8px;width:18px;height:18px}.c2::after{left:24px;top:-6px;width:14px;height:14px}
+  .brand{position:absolute;left:28px;top:20px;font-size:20px;font-weight:800;letter-spacing:-.02em;font-stretch:105%}
+  .brand .tw{color:#5EA8DA}
+  .song{position:absolute;left:30px;top:44px;font-size:9.5px;font-weight:600;color:#5E87A6}
+  .panel{position:absolute;left:28px;top:66px;width:560px;height:170px;background:#fff;border-radius:26px;box-shadow:0 6px 0 #d4e6f2;overflow:hidden;
+    background-image:repeating-linear-gradient(180deg,transparent 0 30px,#EAF4FC 30px 33px);background-position:0 12px}
+  .note{position:absolute;height:24px;padding:0 13px;border-radius:999px;background:#B9DDF5;color:#2B5876;font-size:11px;font-weight:700;display:flex;align-items:center;white-space:nowrap}
+  .note.hit{background:linear-gradient(135deg,#FFD66B,#FFE49A);color:#7A5A14;box-shadow:0 0 22px rgba(255,214,107,.85)}
+  .note.done{background:#EAF3FA;color:#5E87A6}
+  .singer{position:absolute;width:36px;height:36px;border-radius:50%;border:3px solid #fff;background:linear-gradient(135deg,#F4DBE3,#B9DDF5);box-shadow:0 0 0 1px rgba(43,88,118,.12),0 0 18px rgba(255,214,107,.7)}
+  .pitch{position:absolute;left:0;right:0;height:2px;background:#5EA8DA;opacity:.55}
+  .streak{position:absolute;right:112px;top:12px;height:22px;padding:0 10px;border-radius:999px;background:linear-gradient(135deg,#FFD66B,#FFE49A);color:#7A5A14;font-size:9.5px;font-weight:800;display:flex;align-items:center;gap:4px;box-shadow:0 3px 0 #E8B445}
+  .mic{position:absolute;left:28px;top:256px;width:64px;height:64px;border-radius:50%;border:5px solid #fff;background:linear-gradient(135deg,#5EA8DA,#83C5F1);display:grid;place-items:center;box-shadow:0 0 0 7px rgba(94,168,218,.22)}
+  .mic svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .eq{position:absolute;left:110px;top:272px;display:flex;align-items:flex-end;gap:5px;height:34px}
+  .eq i{display:block;width:6px;border-radius:999px;background:#5EA8DA}.eq i:nth-child(even){background:#83C5F1}
+  .btn{position:absolute;left:192px;top:266px;height:42px;padding:0 24px;border-radius:999px;background:#5EA8DA;color:#fff;font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px;box-shadow:0 6px 0 #3F88BC}
+  .btn.pink{left:318px;background:#F4DBE3;color:#A05F83;box-shadow:0 6px 0 #DDAEC6}
+  .mascot{position:absolute;left:14px;top:118px;width:112px;height:112px;filter:drop-shadow(0 6px 10px rgba(43,88,118,.22))}
+  .sp{position:absolute}
+  .noteglyph{position:absolute;fill:none;stroke:#2B5876;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style></head><body>
+<div class="sky">
+  <div class="cloud c1"></div><div class="cloud c2"></div>
+  <div class="brand"><span class="tw">Twinkle</span>Tune</div>
+  <div class="song">Twinkle, Twinkle, Little Star · tuned to Mae's voice (A3–D5)</div>
+  <div class="streak">✦ 7 in a row</div>
+  <div class="panel">
+    <div class="pitch" style="top:97px"></div>
+    <div class="note done" style="left:18px;top:118px">Twin-</div>
+    <div class="note done" style="left:72px;top:118px">kle,</div>
+    <div class="note done" style="left:108px;top:52px">twin-</div>
+    <div class="note hit" style="left:200px;top:52px">kle,</div>
+    <div class="note" style="left:248px;top:19px">lit-</div>
+    <div class="note" style="left:296px;top:19px">tle</div>
+    <div class="note" style="left:346px;top:85px">star,</div>
+    <div class="note" style="left:410px;top:118px">how</div>
+    <div class="note" style="left:462px;top:118px">I</div>
+    <div class="singer" style="left:162px;top:46px"></div>
+  </div>
+  <div class="mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg></div>
+  <div class="eq"><i style="height:12px"></i><i style="height:24px"></i><i style="height:34px"></i><i style="height:20px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:22px"></i></div>
+  <div class="btn">Sing it again</div>
+  <div class="btn pink">Duet ♥</div>
+</div>
+<svg class="mascot" viewBox="0 0 120 120">
+  <path d="M60 6 L75 42 L114 45 L84 71 L94 110 L60 89 L26 110 L36 71 L6 45 L45 42 Z" fill="#FFD66B" stroke="#E8B445" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="50" cy="56" r="3.8" fill="#2B5876"/><circle cx="70" cy="56" r="3.8" fill="#2B5876"/>
+  <circle cx="44" cy="64" r="4.6" fill="#F4DBE3"/><circle cx="76" cy="64" r="4.6" fill="#F4DBE3"/>
+  <path d="M51 63 Q60 75 69 63" fill="none" stroke="#2B5876" stroke-width="3.4" stroke-linecap="round"/>
+</svg>
+<svg class="sp" style="left:44px;top:84px;width:18px;height:18px" viewBox="0 0 64 64"><path d="M32 10c3 11 8 16 20 20-12 4-17 9-20 24-4-15-9-20-21-24 12-4 17-9 21-20Z" fill="#5EA8DA"/></svg>
+<svg class="sp" style="left:72px;top:60px;width:14px;height:14px" viewBox="0 0 64 64"><path d="M32 10c3 11 8 16 20 20-12 4-17 9-20 24-4-15-9-20-21-24 12-4 17-9 21-20Z" fill="#FFD66B"/></svg>
+<svg class="sp" style="left:26px;top:238px;width:26px;height:26px" viewBox="0 0 64 64"><path d="M32 10c3 11 8 16 20 20-12 4-17 9-20 24-4-15-9-20-21-24 12-4 17-9 21-20Z" fill="#FFD66B"/></svg>
+<svg class="sp" style="left:548px;top:22px;width:16px;height:16px" viewBox="0 0 64 64"><path d="M32 10c3 11 8 16 20 20-12 4-17 9-20 24-4-15-9-20-21-24 12-4 17-9 21-20Z" fill="#fff"/></svg>
+<svg class="noteglyph" style="left:62px;top:286px;width:22px;height:22px" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+<svg class="noteglyph" style="left:40px;top:322px;width:16px;height:16px;stroke:#A05F83" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+</body></html>

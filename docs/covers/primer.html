@@ -1,0 +1,73 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  body{font-family:"DejaVu Sans Mono",monospace}
+  .sheet{position:absolute;background:#fff;border:1px solid var(--hair);border-radius:4px;color:var(--ink);overflow:hidden}
+  .sheet .name{display:flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-bottom:1px solid var(--tint);font-size:9px;font-weight:700;background:#f6f8fc}
+  .sheet .name svg{width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;color:var(--link)}
+  .sheet .body{padding:10px 12px;font-size:8.6px;line-height:1.6;white-space:pre}
+  .hub{left:330px;top:46px;width:236px;height:360px}
+  .hub .body{font-size:8.8px}
+  .h{color:var(--link);font-weight:700}
+  .c{background:var(--tint);border-radius:2px;padding:0 3px}
+  .m{opacity:.55}
+  .ptr{width:156px;height:58px}
+  .ptr .name{font-size:8.5px;white-space:nowrap}
+  .ptr .body{padding:8px 10px;font-size:9px}
+  .term{position:absolute;left:-1px;top:226px;width:296px;height:200px;background:var(--ink);color:rgba(255,255,255,.88);border-radius:4px;padding:14px 18px;font-size:10px;line-height:1.6;white-space:pre}
+  .term .p{color:var(--accent)}
+  .term .ok{color:#30c67c}
+  .term .same{color:rgba(255,255,255,.55)}
+  .term .dots{position:absolute;right:14px;top:12px;display:flex;gap:5px}
+  .term .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22)}
+  .wires{position:absolute;inset:0;pointer-events:none}
+</style></head><body>
+<svg class="wires" viewBox="0 0 600 375">
+  <defs><marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0.8 L7 4 L0 7.2 Z" fill="#1e4aa8"/></marker></defs>
+  <g fill="none" stroke="#1e4aa8" stroke-width="1.1" stroke-dasharray="3 3" marker-end="url(#a)" opacity=".8">
+    <path d="M300 68 C 316 68, 318 82, 330 82"/>
+    <path d="M300 130 C 316 130, 318 114, 330 114"/>
+    <path d="M300 194 C 316 194, 318 148, 330 148"/>
+  </g>
+</svg>
+<div class="sheet ptr" style="left:144px;top:40px"><div class="name"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg>CLAUDE.md</div><div class="body">@AGENTS.md</div></div>
+<div class="sheet ptr" style="left:144px;top:102px"><div class="name"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg>GEMINI.md</div><div class="body">Read ./AGENTS.md <span class="m">first</span></div></div>
+<div class="sheet ptr" style="left:144px;top:164px"><div class="name"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg>copilot-instructions.md</div><div class="body">Read ../AGENTS.md <span class="m">first</span></div></div>
+<div class="sheet hub"><div class="name"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg>AGENTS.md <span class="m" style="font-weight:400;margin-left:auto">generated · 7 sections</span></div>
+<div class="body"><span class="h">## Project Overview</span>
+This repository is <span class="c">checkout-service</span>.
+It is built with node.
+
+<span class="h">## Commands</span>
+- Install: <span class="c">npm ci</span>
+- Test: <span class="c">npm run test</span>
+- Lint: <span class="c">npm run lint</span>
+
+<span class="h">## Project Structure</span>
+- <span class="c">src/</span> application code
+- <span class="c">tests/</span> unit and integration tests
+
+<span class="h">## Testing</span>
+- Run <span class="c">npm run test</span> before every push.
+
+<span class="h">## Code Style</span>
+- Follow <span class="c">.editorconfig</span> (2-space indent).
+
+<span class="h">## Git Workflow</span>
+- CI runs on pull requests via
+  <span class="c">.github/workflows/ci.yml</span>.
+
+<span class="h">## Boundaries</span>
+- <span class="c">AGENTS.md</span> is generated. Regenerate it
+  with <span class="c">primer init</span>; edits are replaced.</div></div>
+<div class="term"><div class="dots"><i></i><i></i><i></i></div><span class="p">$</span> primer init
+<span class="ok">create:</span> AGENTS.md
+<span class="ok">create:</span> CLAUDE.md
+<span class="ok">create:</span> GEMINI.md
+
+<span class="p">$</span> primer check
+<span class="same">unchanged:</span> AGENTS.md
+<span class="same">unchanged:</span> CLAUDE.md
+
+<span class="p">$</span> primer mcp check
+<span class="ok">installed:</span> docs <span class="same">1.4.2</span></div>
+</body></html>
