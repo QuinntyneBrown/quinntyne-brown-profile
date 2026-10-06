@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .wall{position:absolute;left:70px;top:66px;width:600px;height:400px;background:#fff;border:1px solid #e4e4e7;border-radius:14px;color:#18181b;overflow:hidden}
+  .top{position:absolute;left:0;right:0;top:0;height:42px;border-bottom:1px solid #e4e4e7;display:flex;align-items:center;padding:0 20px;gap:22px}
+  .wm{font-size:16px;font-weight:600;letter-spacing:-.02em;display:inline-flex;align-items:center}
+  .wm i{display:inline-block;width:.56em;height:.56em;border:.11em solid currentColor;border-radius:999px;margin:0 .03em}
+  .nav{display:flex;gap:14px;font-size:9.5px;color:#55555e;font-weight:500}
+  .nav b{color:#18181b;font-weight:600}
+  .kick{font-family:"DejaVu Sans Mono",monospace;font-size:7.5px;letter-spacing:.06em;text-transform:uppercase;color:#8b8b95}
+  .grid{position:absolute;left:20px;top:58px;display:grid;grid-template-columns:repeat(3,88px);gap:8px}
+  .tile{width:88px;height:110px;border-radius:4px;overflow:hidden;position:relative;background:#ececef}
+  .tile::after{content:"";position:absolute;inset:0;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(24,24,27,.06)}
+  .p1{background:linear-gradient(180deg,#141f3a 0%,#2a4a7a 38%,#6f8fc0 47%,#d08a55 51%,#2a3350 54%,#111728 100%)}
+  .p1 .pier{position:absolute;left:12px;right:0;top:58%;height:3px;background:#0b0f1c}
+  .p1 .post{position:absolute;width:3px;background:#0b0f1c;bottom:0}
+  .p2{background:radial-gradient(circle at 60% 40%,#fff1c2 0 9px,transparent 10px),linear-gradient(180deg,#f3c9a0 0%,#e58b5a 42%,#8a5a45 58%,#2d2622 100%)}
+  .p3{background:linear-gradient(118deg,#fafafa 0 22%,#d9d9dd 22% 36%,#f1f1f3 36% 50%,#bdbdc4 50% 62%,#e7e7ea 62% 76%,#8b8b95 76%)}
+  .p4{background:linear-gradient(180deg,#5d7d6a 0%,#2d4a3a 40%,#1a2c22 100%)}
+  .p5{background:radial-gradient(circle at 50% 36%,#d4b08a 0 15px,transparent 16px),radial-gradient(ellipse at 50% 92%,#3b3a45 0 40px,transparent 41px),linear-gradient(#55535f,#1f1e26)}
+  .p6{background:linear-gradient(90deg,#2b2b30 0 38%,#9a9aa3 38% 44%,#f2f2f4 44% 56%,#8a8a93 56% 62%,#34343a 62%)}
+  .spot{position:absolute;left:40px;top:42px;width:34px;height:34px;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 300px rgba(24,24,27,.45)}
+  .crit{position:absolute;left:322px;top:58px;width:196px}
+  .crit .kick{color:#2b5c8a}
+  .crit h4{margin:4px 0 5px;font-size:12.5px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+  .crit p{margin:0;font-size:9px;line-height:1.45;color:#55555e}
+  .tags{display:flex;gap:5px;margin:8px 0 14px}
+  .tag{font-family:"DejaVu Sans Mono",monospace;font-size:7.5px;padding:2px 7px;border:1px dashed #c6d6e5;border-radius:999px;color:#2b5c8a;background:#eef3f8}
+  .crit ol{margin:4px 0 0;padding-left:14px;font-size:9px;line-height:1.45;color:#55555e}
+  .loupe{position:absolute;left:216px;top:232px;width:108px;height:108px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #c9c9cf,0 12px 30px rgba(24,24,27,.22);
+    background:linear-gradient(180deg,#2a4a7a 0%,#6f8fc0 32%,#d08a55 44%,#2a3350 54%,#111728 100%);overflow:hidden}
+  .loupe::before{content:"";position:absolute;left:30px;right:-10px;top:60px;height:9px;background:#0b0f1c}
+  .loupe::after{content:"";position:absolute;left:52px;top:66px;width:9px;height:70px;background:#0b0f1c}
+  .exif{position:absolute;left:20px;top:296px;font-family:"DejaVu Sans Mono",monospace;font-size:8px;color:#8b8b95;letter-spacing:.02em}
+  .lead{position:absolute;left:0;top:0;width:600px;height:400px;pointer-events:none}
+</style></head><body>
+<div class="wall">
+  <div class="top"><span class="wm">L<i></i>upe</span><span class="nav"><b>My Work</b><span>Inspiration</span><span>Photographers</span><span>Locations</span><span>Compare</span></span></div>
+  <div class="grid">
+    <div class="tile p1"><span class="pier"></span><span class="post" style="left:26px;height:22px"></span><span class="post" style="left:42px;height:30px"></span><span class="post" style="left:62px;height:40px"></span><span class="spot"></span></div>
+    <div class="tile p2"></div>
+    <div class="tile p3"></div>
+    <div class="tile p4"></div>
+    <div class="tile p5"></div>
+    <div class="tile p6"></div>
+  </div>
+  <div class="exif">HARBOUR, BLUE HOUR · 35MM · F/5.6 · 1/15S · ISO 400</div>
+  <div class="crit">
+    <div class="kick">AI · What works</div>
+    <h4>The horizon holds the upper third.</h4>
+    <p>Warm window light on the waterline pulls the eye to the far pier, and the mooring posts in the foreground walk it there.</p>
+    <div class="tags"><span class="tag">leading lines</span><span class="tag">blue hour</span><span class="tag">thirds</span></div>
+    <div class="kick">AI · Top three improvements</div>
+    <ol><li>Shave the bright strip of sky at the top edge.</li><li>Wait for the near post to clear the pier line.</li><li>Lift the shadows on the water a half stop.</li></ol>
+  </div>
+  <svg class="lead" viewBox="0 0 600 400"><path d="M77 117 C 140 150, 190 200, 236 252" fill="none" stroke="#2b5c8a" stroke-width="1" stroke-dasharray="3 3"/></svg>
+  <div class="loupe"></div>
+</div>
+</body></html>

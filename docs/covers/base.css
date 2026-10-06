@@ -1,0 +1,24 @@
+/* Shared frame for the project cover sources. Each cover is a 600x375 page
+   rendered at 2x by render.mjs; the frame uses the site's own tokens. */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap");
+:root {
+  --ink: #0f2b5b;
+  --link: #1e4aa8;
+  --accent: #9cc0ff;
+  --tint: #e6edf8;
+  --paper: #ffffff;
+  --hair: rgba(15, 43, 91, 0.14);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  width: 600px;
+  height: 375px;
+  overflow: hidden;
+  position: relative;
+  color: var(--ink);
+  background: var(--tint);
+  font-family: Archivo, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.stage { position: absolute; inset: 0; }
