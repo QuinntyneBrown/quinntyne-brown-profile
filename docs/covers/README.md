@@ -4,11 +4,11 @@ Each `*.html` file here is the source of one cover image in `site/covers/`. A co
 
 | Source | Cover | Project |
 | --- | --- | --- |
+| `shelfie.html` | `shelfie.webp` | [shelfie](https://github.com/QuinntyneBrown/shelfie): comprehension question on a book cover, violet palette, sticker-reward progress. |
 | `saturdaze.html` | `saturdaze.webp` | [saturdaze](https://github.com/QuinntyneBrown/saturdaze): the Saturday/Sunday timeline, cream and coral palette, sparkle mark. |
 | `twinkletune.html` | `twinkletune.webp` | [TwinkleTune](https://github.com/QuinntyneBrown/TwinkleTune): the sing stage with note pills, Twinkle the star coach, sky-to-pink gradient. |
+| `fullstack-with-claude.html` | `fullstack-with-claude.webp` | [fullstack-with-claude](https://github.com/QuinntyneBrown/fullstack-with-claude): dark episode slide with terminal output and a video scrubber. |
 | `loupe.html` | `loupe.webp` | [loupe](https://github.com/QuinntyneBrown/loupe): gallery wall, evidence loupe, cyanotype-blue AI critique. |
-| `primer.html` | `primer.webp` | [primer](https://github.com/QuinntyneBrown/primer): `AGENTS.md` hub with pointer files and the plain `verb: path` terminal output. |
-| `press-telemetry.html` | `press-telemetry.webp` | [press-telemetry-reference](https://github.com/QuinntyneBrown/press-telemetry-reference): graphite dashboard, cyan pulse mark, MQTT topic chips. |
 | `studio.html` | `studio.webp` | [quinntyne-brown-studio](https://github.com/QuinntyneBrown/quinntyne-brown-studio): editorial gallery grid, charcoal business card, serif quote total. |
 
 ## Regenerating
